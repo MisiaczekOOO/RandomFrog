@@ -14,12 +14,14 @@ function App() {
   return (
     <body className="body">
       {record && (
-        <div>
-          <a href={record.url}>link to article</a>
-          <img src={record.image_url} />
+        <div className="body__holder">
+          <a href={record.url} target="_blank" className="body__holder--article">link to article</a>
+          <img className="body__image" src={record.image_url} />
+          <h3 className="body__name">Scientific name: <span className="body__name--add">{record.scientific_name}</span> </h3>
+          <h3 className="body__name">Common name: <span className="body__name--add"> {record.species_guess}</span></h3>
         </div>
       )}
-      <button onClick={getRandomRecord}>random frog</button>
+      <button onClick={getRandomRecord} className="body__button">🐸Give me a new frog!🐸</button>
     </body>
   );
 }
