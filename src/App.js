@@ -1,6 +1,6 @@
 import data from "./DATABASE.json"
 import "./style.scss"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
 
@@ -11,6 +11,11 @@ function App() {
     setRecord(data[randomIndex])
   }
 
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    setRecord(data[randomIndex])
+  }, [])
+
   return (
     <body className="body">
       {record && (
@@ -19,6 +24,8 @@ function App() {
           <img className="body__image" src={record.image_url} />
           <h3 className="body__name">Scientific name: <span className="body__name--add">{record.scientific_name}</span> </h3>
           <h3 className="body__name">Common name: <span className="body__name--add"> {record.species_guess}</span></h3>
+          <h3 className="body__name">Appeared: <span className="body__name--add"> {record.place_guess}</span></h3>
+
         </div>
       )}
       <button onClick={getRandomRecord} className="body__button">🐸Give me a new frog!🐸</button>
