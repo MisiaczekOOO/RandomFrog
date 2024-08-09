@@ -1,4 +1,4 @@
-import data from "./DATABASE.json"
+import data from "./data.json"
 import "./style.scss"
 import {useState, useEffect} from "react"
 
@@ -20,7 +20,7 @@ function App() {
             {record && (
                 <div className="body__holder">
                     <div className="body__name-holder">
-                        <h1 className="body__name">{record.species_guess}</h1>
+                        <h1 className="body__common">{record.species_guess}</h1>
                         <h2 className="body__scientific">
                             {record.scientific_name}
                         </h2>
@@ -32,14 +32,22 @@ function App() {
                     >
                         <img className="body__image" src={record.image_url} />
                     </a>
-
-                    {/* <h3 className="body__name">
-                        Appeared:{" "}
-                        <span className="body__name--add">
-                            {" "}
-                            {record.place_guess}
-                        </span>
-                    </h3> */}
+                    {/* <p>Data comes from: {record.name}</p> */}
+                    <h2 className="body__location">
+                        <i class="fa-solid fa-location-dot"></i>{" "}
+                        {record.place_guess}
+                    </h2>
+                    <a
+                        className="body__name"
+                        target="_blank"
+                        href={record.user_login}
+                    >
+                        <i class="fa-solid fa-user"></i> {record.user_login}
+                    </a>
+                    <h2 className="body__location">
+                        <i class="fa-solid fa-calendar-days"></i>{" "}
+                        {record.observed_on}
+                    </h2>
                 </div>
             )}
             <button onClick={getRandomRecord} className="body__button">
