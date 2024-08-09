@@ -5,7 +5,7 @@
 }
 
 .body {
-    background-color: #0e0e0e;
+    background-color: #151515;
     min-height: 100vh;
     max-width: 100vw;
     position: relative;
@@ -18,11 +18,21 @@
 
         &--article {
             width: 100%;
-            text-align: center;
-            background-color: #4f9e3e;
-            padding: 0.625rem 0;
-            color: white;
+            // background: linear-gradient(
+            //     180deg,
+            //     rgba(0, 0, 0, 1) 100%,
+            //     rgba(0, 212, 255, 0) 88%
+            // ) !important;
+            // z-index: 1;
         }
+    }
+
+    &__name-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        max-width: 100%;
+        padding: 2rem 1rem 1rem 1rem;
     }
 
     &__image {
@@ -30,29 +40,31 @@
     }
 
     &__name {
-        font-size: 1.6rem;
+        font-size: 2.25rem;
+        line-height: 100%;
         color: white;
-        margin-top: 0.625rem;
-        padding: 0 3%;
+    }
 
-
-        &--add {
-            color: grey;
-            font-weight: 400;
-            font-style: italic;
-        }
+    &__scientific {
+        font-size: 1rem;
+        color: grey;
+        font-style: italic;
+        font-weight: 400;
     }
 
     &__button {
         margin-top: 5rem;
-        width: 100%;
+        width: 95%;
+        margin: 0 auto;
         padding: 1rem 0;
         font-size: 1.6rem;
         background-color: #0f1f1d;
         color: #bcaf5d;
-        bottom: 0;
+        bottom: 0.6rem;
         left: 0;
+        right: 0;
         font-weight: bolder;
         position: fixed;
+        border: 1px solid white;
     }
 }
