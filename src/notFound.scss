@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    background-color: #151515;
+    min-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+}
+
+.text {
+    padding: 1rem;
+    color: rgb(46, 136, 5);
+    text-align: center;
+}
+
+.subText {
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: normal;
+}
