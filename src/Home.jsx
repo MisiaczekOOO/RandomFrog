@@ -79,24 +79,26 @@ function Home() {
                             </p>
                         </a>
                         {/* <p>Data comes from: {record.name}</p> */}
-                        <h2 className="body__location">
-                            <i className="fa-solid fa-location-dot"></i>{" "}
-                            {record.place_guess}
-                        </h2>
-                        <a
-                            className="body__name"
-                            target="_blank"
-                            href={`https://www.inaturalist.org/people/${record.user_login}`}
-                        >
-                            <i className="fa-solid fa-camera"></i>{" "}
-                            <span className="body__name--decoration">
-                                {record.user_login} | {record.user_name}
-                            </span>
-                        </a>
-                        <h2 className="body__location">
-                            <i className="fa-solid fa-calendar-days"></i>{" "}
-                            {record.observed_on}
-                        </h2>
+                        <div className="body__informations">
+                            <h2 className="body__location">
+                                <i className="fa-solid fa-location-dot"></i>{" "}
+                                {record.place_guess}
+                            </h2>
+                            <a
+                                className="body__name"
+                                target="_blank"
+                                href={`https://www.inaturalist.org/people/${record.user_login}`}
+                            >
+                                <i className="fa-solid fa-camera"></i>{" "}
+                                <span className="body__name--decoration">
+                                    {record.user_login} | {record.user_name}
+                                </span>
+                            </a>
+                            <h2 className="body__location">
+                                <i className="fa-solid fa-calendar-days"></i>{" "}
+                                {record.observed_on}
+                            </h2>
+                        </div>
                         {/* <button onClick={downloadImage}>Save</button> */}
                         {/* <hr /> */}
                         <footer className="footer">
