@@ -52,7 +52,7 @@ function App() {
                     to={`${id}`}
                     className="body__button"
                 >
-                    🐸 New frog! 🐸
+                    🐸 Give me a new frog! 🐸
                 </Link>
             </HashRouter>
         </div>
