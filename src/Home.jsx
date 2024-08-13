@@ -2,12 +2,13 @@ import React from "react"
 import data from "./data.json"
 import "./style.scss"
 import {useState, useEffect} from "react"
-import {useParams} from "react-router-dom"
+import {useParams, useLocation} from "react-router-dom"
 import icon from "./share-solid.svg"
-
+import Seo from "./Seo"
 function Home() {
     const param = useParams()
     const [record, setRecord] = useState()
+    const location = useLocation()
 
     useEffect(() => {
         setRecord(data[param.id])
@@ -15,14 +16,14 @@ function Home() {
 
     useEffect(() => {
         setRecord(data[param.id])
-        console.log(param.id)
+        // console.log(param.id)
     }, [param.id])
 
-    useEffect(() => {
-        if (record && record.species_guess) {
-            document.title = record.species_guess
-        }
-    }, [record])
+    // useEffect(() => {
+    //     if (record && record.species_guess) {
+    //         document.title = record.species_guess
+    //     }
+    // }, [record])
 
     const share = () => {
         const currentUrl = window.location.href
@@ -40,10 +41,11 @@ function Home() {
     }
 
     return (
-        <body className="body">
+        <div className="body">
             <div className="root">
                 {record && (
                     <div className="body__holder">
+                        <Seo image_url={record?.image_url} />
                         <div className="body__name-holder">
                             <div className="body__name-holder--names">
                                 <h1 className="body__common">
@@ -117,7 +119,7 @@ function Home() {
                 )}
                 {/* <button onClick={handleDownload}>Download Image</button> */}
             </div>
-        </body>
+        </div>
     )
 }
 
